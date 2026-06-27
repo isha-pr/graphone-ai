@@ -27,11 +27,11 @@ export default function ClientShell({ children }: { children: React.ReactNode })
 
   return (
     <div className="flex min-h-screen w-full bg-slate-50 dark:bg-zinc-950 text-slate-800 dark:text-zinc-100 transition-colors duration-200">
-      {/* Sidebar Navigation */}
+      {/* Sidebar Navigation (Mobile-only drawer menu) */}
       <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
 
-      {/* Main Workspace Wrapper */}
-      <div className="flex-1 flex flex-col md:pl-64 min-w-0">
+      {/* Main Workspace Wrapper (Full-width top-navigation shell) */}
+      <div className="flex-1 flex flex-col min-w-0">
         {/* Top Header */}
         <Header 
           onMenuClick={() => setIsSidebarOpen(true)} 
