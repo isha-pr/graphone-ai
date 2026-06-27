@@ -137,19 +137,20 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           {/* Card 1: Cursor */}
-          <Link href="/companies/cursor" className="group bg-white dark:bg-zinc-900 border border-slate-100 dark:border-zinc-800/80 p-6 rounded-2xl flex flex-col justify-between hover:shadow-md transition-shadow cursor-pointer shadow-sm relative overflow-hidden">
+          <Link href="/companies/cursor" className="group bg-gradient-to-br from-indigo-950 via-zinc-900 to-purple-950 border border-purple-900/40 p-6 rounded-2xl flex flex-col justify-between hover:shadow-lg hover:shadow-purple-900/10 transition-all cursor-pointer relative overflow-hidden text-white">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/10 blur-2xl rounded-full pointer-events-none" />
             <div>
-              <span className="text-[9px] font-black uppercase text-purple-650 bg-purple-550/10 px-2 py-0.5 rounded">01</span>
-              <h3 className="text-base font-black text-slate-850 dark:text-white mt-4 group-hover:text-brandRed transition-colors">Cursor</h3>
-              <p className="text-[10px] text-slate-400 dark:text-zinc-500 font-bold">AI Coding</p>
-              <p className="text-[11px] text-slate-500 dark:text-zinc-400 font-semibold mt-2 leading-relaxed">
+              <span className="text-[9px] font-black uppercase text-purple-200 bg-purple-500/20 px-2 py-0.5 rounded">01</span>
+              <h3 className="text-base font-black text-white mt-4 group-hover:text-purple-300 transition-colors">Cursor</h3>
+              <p className="text-[10px] text-purple-300 font-bold">AI Coding</p>
+              <p className="text-[11px] text-purple-200/80 font-semibold mt-2 leading-relaxed">
                 The AI-first code editor built for developers.
               </p>
             </div>
             
             {/* Visual polyhedrons vector box */}
             <div className="h-28 flex items-center justify-center my-4">
-              <svg viewBox="0 0 100 100" className="w-24 h-24 stroke-purple-500 fill-purple-500/10 stroke-[1.5]">
+              <svg viewBox="0 0 100 100" className="w-24 h-24 stroke-purple-400 fill-purple-400/10 stroke-[1.5]">
                 <polygon points="50,10 90,32 90,78 50,95 10,78 10,32" />
                 <line x1="50" y1="10" x2="50" y2="95" />
                 <line x1="50" y1="52" x2="90" y2="32" />
@@ -159,26 +160,27 @@ export default function Home() {
               </svg>
             </div>
 
-            <div className="flex items-center justify-between mt-4 pt-3 border-t border-slate-50 dark:border-zinc-850">
-              <span className="text-[9px] font-bold text-brandRed bg-brandRed-light dark:bg-brandRed/10 px-2 py-0.5 rounded">🔥 Trending #1</span>
-              <span className="text-[9.5px] text-slate-400 font-bold flex items-center gap-1"><Eye size={12} /> 16.2K (7d)</span>
+            <div className="flex items-center justify-between mt-4 pt-3 border-t border-purple-900/30">
+              <span className="text-[9px] font-bold text-white bg-brandRed px-2 py-0.5 rounded shadow-sm shadow-brandRed/30">🔥 Trending #1</span>
+              <span className="text-[9.5px] text-purple-300 font-bold flex items-center gap-1"><Eye size={12} /> 16.2K (7d)</span>
             </div>
           </Link>
 
           {/* Card 2: Perplexity */}
-          <Link href="/companies/perplexity" className="group bg-white dark:bg-zinc-900 border border-slate-100 dark:border-zinc-800/80 p-6 rounded-2xl flex flex-col justify-between hover:shadow-md transition-shadow cursor-pointer shadow-sm relative overflow-hidden">
+          <Link href="/companies/perplexity" className="group bg-gradient-to-br from-teal-950 via-zinc-900 to-blue-950 border border-teal-900/40 p-6 rounded-2xl flex flex-col justify-between hover:shadow-lg hover:shadow-teal-900/10 transition-all cursor-pointer relative overflow-hidden text-white">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-teal-500/10 blur-2xl rounded-full pointer-events-none" />
             <div>
-              <span className="text-[9px] font-black uppercase text-blue-650 bg-blue-550/10 px-2 py-0.5 rounded">02</span>
-              <h3 className="text-base font-black text-slate-850 dark:text-white mt-4 group-hover:text-brandRed transition-colors">Perplexity</h3>
-              <p className="text-[10px] text-slate-400 dark:text-zinc-500 font-bold">AI Search</p>
-              <p className="text-[11px] text-slate-500 dark:text-zinc-400 font-semibold mt-2 leading-relaxed">
+              <span className="text-[9px] font-black uppercase text-teal-200 bg-teal-500/20 px-2 py-0.5 rounded">02</span>
+              <h3 className="text-base font-black text-white mt-4 group-hover:text-teal-300 transition-colors">Perplexity</h3>
+              <p className="text-[10px] text-teal-300 font-bold">AI Search</p>
+              <p className="text-[11px] text-teal-200/80 font-semibold mt-2 leading-relaxed">
                 AI search engine for real-time answers.
               </p>
             </div>
 
             {/* Visual grid network sphere */}
             <div className="h-28 flex items-center justify-center my-4">
-              <svg viewBox="0 0 100 100" className="w-24 h-24 stroke-teal-500 fill-none stroke-[1]">
+              <svg viewBox="0 0 100 100" className="w-24 h-24 stroke-teal-400 fill-none stroke-[1]">
                 <circle cx="50" cy="50" r="35" />
                 <ellipse cx="50" cy="50" rx="35" ry="12" />
                 <ellipse cx="50" cy="50" rx="12" ry="35" />
@@ -187,35 +189,36 @@ export default function Home() {
               </svg>
             </div>
 
-            <div className="flex items-center justify-between mt-4 pt-3 border-t border-slate-50 dark:border-zinc-850">
-              <span className="text-[9px] font-bold text-amber-600 bg-amber-50 dark:bg-amber-950/20 px-2 py-0.5 rounded">🔥 Trending #2</span>
-              <span className="text-[9.5px] text-slate-400 font-bold flex items-center gap-1"><Eye size={12} /> 12.3K (7d)</span>
+            <div className="flex items-center justify-between mt-4 pt-3 border-t border-teal-900/30">
+              <span className="text-[9px] font-bold text-slate-900 bg-amber-400 px-2 py-0.5 rounded shadow-sm shadow-amber-400/30">🔥 Trending #2</span>
+              <span className="text-[9.5px] text-teal-300 font-bold flex items-center gap-1"><Eye size={12} /> 12.3K (7d)</span>
             </div>
           </Link>
 
           {/* Card 3: Midjourney */}
-          <Link href="/companies/midjourney" className="group bg-white dark:bg-zinc-900 border border-slate-100 dark:border-zinc-800/80 p-6 rounded-2xl flex flex-col justify-between hover:shadow-md transition-shadow cursor-pointer shadow-sm relative overflow-hidden">
+          <Link href="/companies/midjourney" className="group bg-gradient-to-br from-purple-950 via-zinc-900 to-rose-950 border border-rose-900/40 p-6 rounded-2xl flex flex-col justify-between hover:shadow-lg hover:shadow-rose-900/10 transition-all cursor-pointer relative overflow-hidden text-white">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-rose-500/10 blur-2xl rounded-full pointer-events-none" />
             <div>
-              <span className="text-[9px] font-black uppercase text-red-650 bg-red-550/10 px-2 py-0.5 rounded">03</span>
-              <h3 className="text-base font-black text-slate-850 dark:text-white mt-4 group-hover:text-brandRed transition-colors">Midjourney</h3>
-              <p className="text-[10px] text-slate-400 dark:text-zinc-500 font-bold">AI Image</p>
-              <p className="text-[11px] text-slate-500 dark:text-zinc-400 font-semibold mt-2 leading-relaxed">
+              <span className="text-[9px] font-black uppercase text-rose-200 bg-rose-500/20 px-2 py-0.5 rounded">03</span>
+              <h3 className="text-base font-black text-white mt-4 group-hover:text-rose-300 transition-colors">Midjourney</h3>
+              <p className="text-[10px] text-rose-300 font-bold">AI Image</p>
+              <p className="text-[11px] text-rose-200/80 font-semibold mt-2 leading-relaxed">
                 Create stunning images from natural language.
               </p>
             </div>
 
             {/* Visual waves nebula */}
             <div className="h-28 flex items-center justify-center my-4">
-              <svg viewBox="0 0 100 100" className="w-24 h-24 stroke-rose-500 fill-none stroke-[1.5]">
+              <svg viewBox="0 0 100 100" className="w-24 h-24 stroke-rose-400 fill-none stroke-[1.5]">
                 <path d="M10,50 Q30,20 50,50 T90,50" />
                 <path d="M10,60 Q30,30 50,60 T90,60" className="opacity-60" />
                 <path d="M10,40 Q30,10 50,40 T90,40" className="opacity-30" />
               </svg>
             </div>
 
-            <div className="flex items-center justify-between mt-4 pt-3 border-t border-slate-50 dark:border-zinc-850">
-              <span className="text-[9px] font-bold text-amber-600 bg-amber-50 dark:bg-amber-950/20 px-2 py-0.5 rounded">🔥 Trending #3</span>
-              <span className="text-[9.5px] text-slate-400 font-bold flex items-center gap-1"><Eye size={12} /> 9.7K (7d)</span>
+            <div className="flex items-center justify-between mt-4 pt-3 border-t border-rose-900/30">
+              <span className="text-[9px] font-bold text-slate-900 bg-amber-400 px-2 py-0.5 rounded shadow-sm shadow-amber-400/30">🔥 Trending #3</span>
+              <span className="text-[9.5px] text-rose-300 font-bold flex items-center gap-1"><Eye size={12} /> 9.7K (7d)</span>
             </div>
           </Link>
 
@@ -265,14 +268,14 @@ export default function Home() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-6 gap-4">
           
           {/* Card 1: Lovable */}
-          <div className="bg-white dark:bg-zinc-900 border border-slate-100 dark:border-zinc-800/80 p-5 rounded-2xl shadow-sm flex flex-col justify-between relative overflow-hidden h-40">
+          <div className="bg-gradient-to-b from-blue-50 to-blue-100/60 dark:from-zinc-900 dark:to-blue-950/20 border border-blue-100 dark:border-zinc-800/80 p-4 rounded-2xl shadow-sm flex flex-col justify-between relative overflow-hidden h-40">
             <div>
-              <span className="text-[15px]">⚡</span>
+              <div className="w-7 h-7 rounded-lg bg-blue-550/10 text-blue-600 flex items-center justify-center text-xs font-bold">⚡</div>
               <h4 className="text-xs font-black text-slate-850 dark:text-white mt-2">Lovable</h4>
-              <p className="text-[9px] text-slate-400 dark:text-zinc-500 font-bold">AI App Builder</p>
+              <p className="text-[9px] text-slate-400 dark:text-zinc-550 font-bold">AI App Builder</p>
             </div>
             <div className="h-10 mt-4">
               <svg viewBox="0 0 100 40" className="w-full h-full stroke-blue-500 fill-none stroke-[2]">
@@ -281,12 +284,12 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Card 2: Caltera */}
-          <div className="bg-white dark:bg-zinc-900 border border-slate-100 dark:border-zinc-800/80 p-5 rounded-2xl shadow-sm flex flex-col justify-between relative overflow-hidden h-40">
+          {/* Card 2: Cohere */}
+          <div className="bg-gradient-to-b from-rose-50 to-orange-100/60 dark:from-zinc-900 dark:to-rose-950/20 border border-rose-100 dark:border-zinc-800/80 p-4 rounded-2xl shadow-sm flex flex-col justify-between relative overflow-hidden h-40">
             <div>
-              <span className="text-[15px]">🪐</span>
-              <h4 className="text-xs font-black text-slate-850 dark:text-white mt-2">Caltera</h4>
-              <p className="text-[9px] text-slate-400 dark:text-zinc-500 font-bold">AI Infrastructure</p>
+              <div className="w-7 h-7 rounded-lg bg-rose-550/10 text-rose-600 flex items-center justify-center text-xs font-bold">🪐</div>
+              <h4 className="text-xs font-black text-slate-850 dark:text-white mt-2">Cohere</h4>
+              <p className="text-[9px] text-slate-405 dark:text-zinc-500 font-bold">AI Infrastructure</p>
             </div>
             <div className="h-10 mt-4">
               <svg viewBox="0 0 100 40" className="w-full h-full stroke-rose-500 fill-none stroke-[2]">
@@ -296,11 +299,11 @@ export default function Home() {
           </div>
 
           {/* Card 3: ElevenLabs */}
-          <Link href="/companies/elevenlabs" className="bg-white dark:bg-zinc-900 border border-slate-100 dark:border-zinc-800/80 p-5 rounded-2xl shadow-sm flex flex-col justify-between relative overflow-hidden h-40 cursor-pointer hover:shadow-md transition-shadow">
+          <Link href="/companies/elevenlabs" className="bg-gradient-to-b from-teal-50 to-emerald-100/60 dark:from-zinc-900 dark:to-emerald-950/20 border border-teal-100 dark:border-zinc-800/80 p-4 rounded-2xl shadow-sm flex flex-col justify-between relative overflow-hidden h-40 cursor-pointer hover:shadow-md transition-shadow">
             <div>
-              <span className="text-[15px]">〢</span>
+              <div className="w-7 h-7 rounded-lg bg-emerald-550/10 text-emerald-600 flex items-center justify-center text-xs font-bold">〢</div>
               <h4 className="text-xs font-black text-slate-850 dark:text-white mt-2">ElevenLabs</h4>
-              <p className="text-[9px] text-slate-400 dark:text-zinc-500 font-bold">AI Voice</p>
+              <p className="text-[9px] text-slate-405 dark:text-zinc-550 font-bold">AI Voice</p>
             </div>
             <div className="h-10 mt-4">
               <svg viewBox="0 0 100 40" className="w-full h-full stroke-emerald-500 fill-none stroke-[2]">
@@ -310,11 +313,11 @@ export default function Home() {
           </Link>
 
           {/* Card 4: Pika */}
-          <div className="bg-white dark:bg-zinc-900 border border-slate-100 dark:border-zinc-800/80 p-5 rounded-2xl shadow-sm flex flex-col justify-between relative overflow-hidden h-40">
+          <div className="bg-gradient-to-b from-yellow-50 to-orange-100/60 dark:from-zinc-900 dark:to-orange-950/20 border border-orange-100 dark:border-zinc-800/80 p-4 rounded-2xl shadow-sm flex flex-col justify-between relative overflow-hidden h-40">
             <div>
-              <span className="text-[15px]">🐇</span>
+              <div className="w-7 h-7 rounded-lg bg-orange-550/10 text-orange-600 flex items-center justify-center text-xs font-bold">🐇</div>
               <h4 className="text-xs font-black text-slate-850 dark:text-white mt-2">Pika</h4>
-              <p className="text-[9px] text-slate-400 dark:text-zinc-500 font-bold">AI Video</p>
+              <p className="text-[9px] text-slate-405 dark:text-zinc-550 font-bold">AI Video</p>
             </div>
             <div className="h-10 mt-4">
               <svg viewBox="0 0 100 40" className="w-full h-full stroke-orange-500 fill-none stroke-[2]">
@@ -323,17 +326,32 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Right CTA Card: Explore Leaders */}
-          <div className="bg-slate-900 dark:bg-zinc-950 text-white border border-slate-800 p-5 rounded-2xl shadow-sm flex flex-col justify-between h-40">
+          {/* Card 5: Mistral AI */}
+          <div className="bg-gradient-to-b from-purple-50 to-blue-100/60 dark:from-zinc-900 dark:to-purple-950/20 border border-purple-100 dark:border-zinc-800/80 p-4 rounded-2xl shadow-sm flex flex-col justify-between relative overflow-hidden h-40">
             <div>
-              <h4 className="text-xs font-bold tracking-tight">Explore tomorrow&apos;s market leaders.</h4>
-              <p className="text-[8.5px] text-zinc-400 font-semibold leading-relaxed mt-1">
+              <div className="w-7 h-7 rounded-lg bg-purple-550/10 text-purple-600 flex items-center justify-center text-xs font-bold">Ｍ</div>
+              <h4 className="text-xs font-black text-slate-850 dark:text-white mt-2">Mistral AI</h4>
+              <p className="text-[9px] text-slate-405 dark:text-zinc-550 font-bold">AI Models</p>
+            </div>
+            <div className="h-10 mt-4">
+              <svg viewBox="0 0 100 40" className="w-full h-full stroke-purple-500 fill-none stroke-[2]">
+                <path d="M0,38 Q15,10 35,20 T70,5 T100,25" />
+              </svg>
+            </div>
+          </div>
+
+          {/* Right Explore Leaders CTA Card */}
+          <div className="bg-gradient-to-tr from-slate-900 to-indigo-950 text-white border border-slate-850 p-4 rounded-2xl shadow-sm flex flex-col justify-between h-40 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-24 h-24 bg-purple-500/10 blur-xl pointer-events-none" />
+            <div>
+              <h4 className="text-xs font-black tracking-tight leading-snug">Explore tomorrow&apos;s market leaders today.</h4>
+              <p className="text-[8px] text-zinc-400 font-semibold leading-relaxed mt-1">
                 Discover companies with the highest growth potential across the AI landscape.
               </p>
             </div>
             <Link 
               href="/companies"
-              className="w-full text-center py-2 bg-white hover:bg-zinc-100 text-slate-950 text-[10px] font-black rounded-lg transition-colors flex items-center justify-center gap-1.5"
+              className="w-full text-center py-2 bg-white hover:bg-zinc-100 text-slate-950 text-[10px] font-black rounded-lg transition-colors flex items-center justify-center gap-1.5 shadow-sm"
             >
               Explore Growth Leaders <ArrowRight size={11} />
             </Link>
@@ -364,41 +382,41 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           
           {/* Glean */}
-          <Link href="/companies/perplexity" className="group bg-white dark:bg-zinc-900 border border-slate-100 dark:border-zinc-800/80 p-6 rounded-2xl flex flex-col justify-between hover:shadow-md transition-shadow shadow-sm min-h-[175px]">
+          <Link href="/companies/perplexity" className="group bg-gradient-to-br from-blue-50/70 to-indigo-100/60 dark:from-zinc-900 dark:to-indigo-950/20 border border-slate-150 dark:border-zinc-800/80 p-6 rounded-2xl flex flex-col justify-between hover:shadow-md transition-shadow shadow-sm min-h-[175px]">
             <div>
               <div className="flex items-center justify-between">
-                <div className="w-10 h-10 rounded-xl bg-blue-500 text-white flex items-center justify-center text-xl font-bold">
+                <div className="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center text-xl font-bold shadow-sm shadow-blue-500/20">
                   G
                 </div>
-                <span className="text-[28px] text-blue-500/10 font-black">g</span>
+                <span className="text-[28px] text-blue-500/10 font-black select-none">g</span>
               </div>
               <h3 className="text-sm font-black text-slate-850 dark:text-white mt-4 group-hover:text-brandRed transition-colors">Glean</h3>
               <p className="text-[9px] text-slate-400 font-bold uppercase mt-0.5">AI Search</p>
-              <p className="text-[10px] text-slate-500 dark:text-zinc-450 font-semibold mt-1.5 leading-relaxed">
+              <p className="text-[10px] text-slate-550 dark:text-zinc-400 font-semibold mt-1.5 leading-relaxed">
                 Enterprise AI search across all your data.
               </p>
             </div>
-            <div className="text-[9px] text-slate-400 font-bold mt-4">
+            <div className="text-[9px] text-slate-405 dark:text-zinc-500 font-bold mt-4">
               2022 • 51-200 employees
             </div>
           </Link>
 
-          {/* Hebe */}
+          {/* Reka */}
           <div className="group bg-white dark:bg-zinc-900 border border-slate-100 dark:border-zinc-800/80 p-6 rounded-2xl flex flex-col justify-between hover:shadow-md transition-shadow shadow-sm min-h-[175px]">
             <div>
               <div className="flex items-center justify-between">
                 <div className="w-10 h-10 rounded-xl bg-black text-white flex items-center justify-center text-xl font-bold font-mono">
                   ⌘
                 </div>
-                <span className="text-[28px] text-slate-100 dark:text-zinc-800 font-black">h</span>
+                <span className="text-[28px] text-slate-100 dark:text-zinc-850 font-black select-none">r</span>
               </div>
-              <h3 className="text-sm font-black text-slate-850 dark:text-white mt-4">Hebe</h3>
+              <h3 className="text-sm font-black text-slate-850 dark:text-white mt-4">Reka</h3>
               <p className="text-[9px] text-slate-400 font-bold uppercase mt-0.5">AI Research</p>
-              <p className="text-[10px] text-slate-500 dark:text-zinc-450 font-semibold mt-1.5 leading-relaxed">
+              <p className="text-[10px] text-slate-555 dark:text-zinc-450 font-semibold mt-1.5 leading-relaxed">
                 Building multimodal AI models.
               </p>
             </div>
-            <div className="text-[9px] text-slate-400 font-bold mt-4">
+            <div className="text-[9px] text-slate-405 dark:text-zinc-500 font-bold mt-4">
               2023 • 11-50 employees
             </div>
           </div>
@@ -407,38 +425,39 @@ export default function Home() {
           <div className="group bg-white dark:bg-zinc-900 border border-slate-100 dark:border-zinc-800/80 p-6 rounded-2xl flex flex-col justify-between hover:shadow-md transition-shadow shadow-sm min-h-[175px]">
             <div>
               <div className="flex items-center justify-between">
-                <div className="w-10 h-10 rounded-xl bg-amber-50 dark:bg-amber-950/20 flex items-center justify-center text-xl font-bold">
+                <div className="w-10 h-10 rounded-xl bg-amber-50 dark:bg-amber-950/20 flex items-center justify-center text-xl font-bold border dark:border-zinc-800">
                   🤗
                 </div>
-                <span className="text-[28px] text-amber-500/10 font-black">hf</span>
+                <span className="text-[28px] text-amber-500/10 font-black select-none">hf</span>
               </div>
               <h3 className="text-sm font-black text-slate-850 dark:text-white mt-4">Hugging Face</h3>
               <p className="text-[9px] text-slate-400 font-bold uppercase mt-0.5">AI Infrastructure</p>
-              <p className="text-[10px] text-slate-500 dark:text-zinc-450 font-semibold mt-1.5 leading-relaxed">
+              <p className="text-[10px] text-slate-555 dark:text-zinc-450 font-semibold mt-1.5 leading-relaxed">
                 The AI community building the future.
               </p>
             </div>
-            <div className="text-[9px] text-slate-400 font-bold mt-4">
+            <div className="text-[9px] text-slate-405 dark:text-zinc-500 font-bold mt-4">
               2016 • 201-500 employees
             </div>
           </div>
 
           {/* Mistral AI */}
-          <div className="group bg-gradient-to-br from-amber-50 to-orange-100 dark:from-zinc-900 dark:to-zinc-900/50 border border-amber-100/50 dark:border-zinc-800 p-6 rounded-2xl flex flex-col justify-between hover:shadow-md transition-shadow shadow-sm min-h-[175px]">
+          <div className="group bg-gradient-to-r from-amber-50/40 via-orange-100/50 to-yellow-250/20 dark:from-zinc-900 dark:via-orange-950/20 dark:to-yellow-950/10 border border-amber-100/50 dark:border-zinc-800 p-6 rounded-2xl flex flex-col justify-between hover:shadow-md transition-shadow shadow-sm min-h-[175px] relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-yellow-400/20 to-orange-400/20 blur-2xl rounded-full pointer-events-none" />
             <div>
               <div className="flex items-center justify-between">
-                <div className="w-10 h-10 rounded-xl bg-orange-600 text-white flex items-center justify-center text-base font-extrabold">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-yellow-500 to-orange-600 text-white flex items-center justify-center text-base font-extrabold shadow-sm">
                   Ｍ
                 </div>
-                <span className="text-[28px] text-orange-500/10 font-black">m</span>
+                <span className="text-[28px] text-orange-500/10 font-black select-none">m</span>
               </div>
               <h3 className="text-sm font-black text-slate-850 dark:text-white mt-4">Mistral AI</h3>
               <p className="text-[9px] text-slate-400 font-bold uppercase mt-0.5">AI Models</p>
-              <p className="text-[10px] text-slate-500 dark:text-zinc-450 font-semibold mt-1.5 leading-relaxed">
+              <p className="text-[10px] text-slate-555 dark:text-zinc-450 font-semibold mt-1.5 leading-relaxed">
                 Frontier AI models for every builder.
               </p>
             </div>
-            <div className="text-[9px] text-slate-400 font-bold mt-4">
+            <div className="text-[9px] text-slate-405 dark:text-zinc-500 font-bold mt-4">
               2023 • 51-200 employees
             </div>
           </div>
