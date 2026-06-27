@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import Sidebar from "./Sidebar";
 import Header from "./Header";
 import SearchModal from "./SearchModal";
@@ -8,6 +9,8 @@ import SearchModal from "./SearchModal";
 export default function ClientShell({ children }: { children: React.ReactNode }) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
 
   // Keyboard listener for '/' search trigger
   useEffect(() => {
@@ -29,6 +32,13 @@ export default function ClientShell({ children }: { children: React.ReactNode })
     <div className="flex min-h-screen w-full bg-slate-50 dark:bg-zinc-950 text-slate-800 dark:text-zinc-100 transition-colors duration-200">
       {/* Sidebar Navigation (Mobile-only drawer menu) */}
       <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
+
+      {/* Persistent Sidebar on Desktop for Home page */}
+      {isHome && (
+        <aside className="hidden lg:flex w-64 flex-shrink-0 sticky top-0 h-screen z-20">
+          <Sidebar persistent />
+        </aside>
+      )}
 
       {/* Main Workspace Wrapper (Full-width top-navigation shell) */}
       <div className="flex-1 flex flex-col min-w-0">

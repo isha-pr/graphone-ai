@@ -17,9 +17,10 @@ import {
 interface SidebarProps {
   isOpen?: boolean;
   onClose?: () => void;
+  persistent?: boolean;
 }
 
-export default function Sidebar({ isOpen = false, onClose }: SidebarProps) {
+export default function Sidebar({ isOpen = false, onClose, persistent = false }: SidebarProps) {
   const pathname = usePathname();
 
   const navItems = [
@@ -129,6 +130,10 @@ export default function Sidebar({ isOpen = false, onClose }: SidebarProps) {
       </div>
     </div>
   );
+
+  if (persistent) {
+    return sidebarContent;
+  }
 
   return (
     <>
