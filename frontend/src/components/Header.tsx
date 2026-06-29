@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Search, Sun, Moon, Menu, Bell, ChevronDown, ArrowRight } from "lucide-react";
 import { useTheme } from "@/context/ThemeContext";
+import { GraphOneLogo } from "./Logos";
 
 interface HeaderProps {
   onMenuClick: () => void;
@@ -31,11 +32,9 @@ export default function Header({ onMenuClick, onSearchClick }: HeaderProps) {
       <div className="flex items-center gap-6 flex-1 max-w-xl">
         {/* Brand Logo - hidden on desktop if isHome because persistent sidebar shows it */}
         <Link href="/" className={`flex items-center gap-2 flex-shrink-0 ${isHome ? "lg:hidden" : ""}`}>
-          <div className="w-8 h-8 rounded-full bg-brandRed flex items-center justify-center text-white font-extrabold text-lg shadow-sm shadow-brandRed/30">
-            g
-          </div>
+          <GraphOneLogo className="w-8 h-8 flex-shrink-0" />
           <span className="font-black text-xl tracking-tight text-slate-800 dark:text-white">
-            graphone
+            GraphOne
           </span>
         </Link>
 

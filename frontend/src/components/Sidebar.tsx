@@ -10,9 +10,10 @@ import {
   Users, 
   Briefcase, 
   FileText, 
-  PlusCircle, 
+  PlusSquare, 
   X 
 } from "lucide-react";
+import { GraphOneLogo } from "./Logos";
 
 interface SidebarProps {
   isOpen?: boolean;
@@ -24,17 +25,17 @@ export default function Sidebar({ isOpen = false, onClose, persistent = false }:
   const pathname = usePathname();
 
   const navItems = [
-    { name: "Home", href: "/", icon: Home },
-    { name: "AI Startups", href: "/companies", icon: Rocket },
-    { name: "AI Products", href: "/products", icon: Box },
-    { name: "Investors", href: "/investors", icon: Users },
-    { name: "Jobs", href: "/jobs", icon: Briefcase, disabled: true },
-    { name: "News", href: "/news", icon: FileText, disabled: true }
+    { name: "Home", href: "/", icon: Home, color: "text-brandRed" },
+    { name: "AI Startups", href: "/companies", icon: Rocket, color: "text-purple-500 dark:text-purple-400" },
+    { name: "AI Products", href: "/products", icon: Box, color: "text-emerald-500 dark:text-emerald-400" },
+    { name: "Investors", href: "/investors", icon: Users, color: "text-amber-500 dark:text-amber-400" },
+    { name: "Jobs", href: "/jobs", icon: Briefcase, color: "text-blue-500 dark:text-blue-400" },
+    { name: "News", href: "/news", icon: FileText, color: "text-indigo-500 dark:text-indigo-400" }
   ];
 
   const contributeItems = [
-    { name: "Submit Startup", href: "/submit-startup", icon: PlusCircle, disabled: true },
-    { name: "Submit Product", href: "/submit-product", icon: PlusCircle, disabled: true }
+    { name: "Submit Startup", href: "/submit-startup", icon: Rocket, color: "text-pink-500 dark:text-pink-400" },
+    { name: "Submit Product", href: "/submit-product", icon: PlusSquare, color: "text-violet-500 dark:text-violet-400" }
   ];
 
   const sidebarContent = (
@@ -42,11 +43,9 @@ export default function Sidebar({ isOpen = false, onClose, persistent = false }:
       {/* Brand Logo */}
       <div className="flex items-center gap-2 mb-8 mt-2">
         <Link href="/" className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-lg bg-brandRed flex items-center justify-center text-white font-bold text-lg shadow-sm shadow-brandRed/45">
-            G
-          </div>
+          <GraphOneLogo className="w-8 h-8 flex-shrink-0" />
           <span className="font-extrabold text-xl tracking-tight text-slate-800 dark:text-white">
-            GraphOne <span className="text-brandRed text-xs font-semibold align-super">AI</span>
+            GraphOne
           </span>
         </Link>
         {onClose && (
@@ -62,12 +61,8 @@ export default function Sidebar({ isOpen = false, onClose, persistent = false }:
       {/* Main Navigation */}
       <div className="flex-1 space-y-6">
         <div>
-          <span className="text-[10px] font-bold tracking-wider text-slate-400 dark:text-zinc-500 uppercase px-3">
-            Navigation
-          </span>
-          <ul className="mt-2 space-y-1">
+          <ul className="space-y-1">
             {navItems.map((item) => {
-              // Exact match for home, startsWith for others
               const isActive = item.href === "/" 
                 ? pathname === "/" 
                 : pathname.startsWith(item.href);
@@ -76,26 +71,22 @@ export default function Sidebar({ isOpen = false, onClose, persistent = false }:
 
               return (
                 <li key={item.name}>
-                  {item.disabled ? (
-                    <div className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-350 dark:text-zinc-600 text-sm cursor-not-allowed opacity-60">
-                      <Icon size={18} />
-                      <span>{item.name}</span>
-                      <span className="ml-auto text-[9px] bg-slate-100 dark:bg-zinc-800 text-slate-400 px-1.5 py-0.5 rounded font-mono">SOON</span>
-                    </div>
-                  ) : (
-                    <Link
-                      href={item.href}
-                      onClick={onClose}
-                      className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 ${
-                        isActive
-                          ? "bg-brandRed-light dark:bg-brandRed/10 text-brandRed"
-                          : "text-slate-600 dark:text-zinc-400 hover:bg-slate-50 dark:hover:bg-zinc-800/50 hover:text-slate-900 dark:hover:text-zinc-100"
-                      }`}
-                    >
-                      <Icon size={18} className={isActive ? "text-brandRed" : "text-slate-400 dark:text-zinc-500"} />
-                      <span>{item.name}</span>
-                    </Link>
-                  )}
+                  <Link
+                    href={item.href}
+                    onClick={onClose}
+                    className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-black transition-all duration-200 ${
+                      isActive
+                        ? "bg-brandRed-light dark:bg-brandRed/10 text-brandRed"
+                        : "text-slate-700 hover:bg-slate-50 dark:text-zinc-300 dark:hover:bg-zinc-800/50 hover:text-slate-900 dark:hover:text-zinc-100"
+                    }`}
+                  >
+                    <Icon 
+                      size={18} 
+                      className={isActive ? "text-brandRed" : item.color} 
+                      fill={isActive && item.name === "Home" ? "currentColor" : "none"}
+                    />
+                    <span>{item.name}</span>
+                  </Link>
                 </li>
               );
             })}
@@ -103,33 +94,36 @@ export default function Sidebar({ isOpen = false, onClose, persistent = false }:
         </div>
 
         {/* Contribute Actions */}
-        <div>
-          <span className="text-[10px] font-bold tracking-wider text-slate-400 dark:text-zinc-500 uppercase px-3">
+        <div className="space-y-2">
+          <span className="text-[10px] font-black tracking-wider text-slate-400 dark:text-zinc-500 uppercase px-3">
             Contribute
           </span>
-          <ul className="mt-2 space-y-1">
+          <ul className="space-y-1">
             {contributeItems.map((item) => {
+              const isActive = pathname.startsWith(item.href);
               const Icon = item.icon;
               return (
                 <li key={item.name}>
-                  <div className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 dark:text-zinc-650 text-sm opacity-70 cursor-not-allowed">
-                    <Icon size={18} className="text-slate-400 dark:text-zinc-650" />
-                    <span className="font-medium text-slate-500 dark:text-zinc-500">{item.name}</span>
-                  </div>
+                  <Link
+                    href={item.href}
+                    onClick={onClose}
+                    className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-black transition-all duration-200 ${
+                      isActive
+                        ? "bg-brandRed-light dark:bg-brandRed/10 text-brandRed"
+                        : "text-slate-700 hover:bg-slate-50 dark:text-zinc-300 dark:hover:bg-zinc-800/50 hover:text-slate-900 dark:hover:text-zinc-100"
+                    }`}
+                  >
+                    <Icon size={18} className={isActive ? "text-brandRed" : item.color} />
+                    <span>{item.name}</span>
+                  </Link>
                 </li>
               );
             })}
           </ul>
         </div>
       </div>
-
-      {/* Sidebar Footer */}
-      <div className="pt-4 border-t border-slate-100 dark:border-zinc-800 text-[11px] text-slate-400 dark:text-zinc-500">
-        <p>© 2026 GraphOne AI.</p>
-        <p className="mt-0.5">The Global Intelligence Layer.</p>
-      </div>
     </div>
-  );
+  );;
 
   if (persistent) {
     return sidebarContent;

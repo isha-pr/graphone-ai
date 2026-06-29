@@ -12,10 +12,11 @@ app.use(cors());
 app.use(express.json());
 app.use(rateLimit({ windowMs: 60000, max: 100 }));
 
-app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+app.use("/api-docs", swaggerUi.serve);
+app.get("/api-docs", swaggerUi.setup(swaggerSpec, { customCss: "" }));
 
 app.get("/", (req, res) => {
-  res.json({ data: { name: "GraphOne API", version: "1.0.0", status: "ok", docs: "http://localhost:" + PORT + "/api-docs" }, meta: {}, error: null });
+  res.json({ data: { name: "GraphOne API", version: "1.0.0", status: "ok", docs: "/api-docs" }, meta: {}, error: null });
 });
 
 app.use("/companies", require("./routes/companies"));

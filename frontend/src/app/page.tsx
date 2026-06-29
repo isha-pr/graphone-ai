@@ -9,8 +9,79 @@ import {
   ChevronLeft, 
   Heart, 
   MessageSquare, 
-  TrendingUp
+  TrendingUp,
+  Folder,
+  Bot,
+  Globe
 } from "lucide-react";
+import {
+  CursorLogo,
+  ClaudeLogo,
+  LovableLogo,
+  MidjourneyLogo,
+  PerplexityLogo,
+  OpenAILogo,
+  AnthropicLogo,
+  RunwayLogo,
+  ElevenLabsLogo,
+  DescriptLogo,
+  CanvaLogo,
+  DatabricksLogo,
+  NotionLogo,
+  PineconeLogo,
+  WeaviateLogo,
+  LangChainLogo,
+  StudioLogo
+} from "@/components/Logos";
+
+const getBrandLogo = (nameOrId: string, className = "w-4 h-4") => {
+  const normalized = nameOrId.toLowerCase().replace(/\s+/g, "");
+  switch (normalized) {
+    case "cursor":
+    case "cursor-editor":
+      return <CursorLogo className={className} />;
+    case "claude":
+      return <ClaudeLogo className={className} />;
+    case "lovable":
+      return <LovableLogo className={className} />;
+    case "midjourney":
+      return <MidjourneyLogo className={className} />;
+    case "perplexity":
+      return <PerplexityLogo className={className} />;
+    case "openai":
+    case "chatgpt":
+      return <OpenAILogo className={className} />;
+    case "anthropic":
+      return <AnthropicLogo className={className} />;
+    case "runway":
+      return <RunwayLogo className={className} />;
+    case "elevenlabs":
+      return <ElevenLabsLogo className={className} />;
+    case "descript":
+      return <DescriptLogo className={className} />;
+    case "canva":
+    case "canva-ai":
+    case "canvaai":
+      return <CanvaLogo className={className} />;
+    case "databricks":
+      return <DatabricksLogo className={className} />;
+    case "notion":
+    case "notion-ai":
+    case "notionai":
+      return <NotionLogo className={className} />;
+    case "pinecone":
+      return <PineconeLogo className={className} />;
+    case "weaviate":
+      return <WeaviateLogo className={className} />;
+    case "langchain":
+      return <LangChainLogo className={className} />;
+    case "studio":
+    case "graphonestudio":
+      return <StudioLogo className={className} />;
+    default:
+      return null;
+  }
+};
 
 interface Product {
   id: string;
@@ -241,18 +312,12 @@ export default function Home() {
             <div className="space-y-1 mt-4">
               <span className="text-[9px] uppercase tracking-wider font-extrabold text-slate-400 dark:text-zinc-500 block">Most searched</span>
               <div className="flex flex-wrap gap-2 pt-1">
-                {[
-                  { name: "Databricks", logo: "🧱" },
-                  { name: "Notion", logo: "Ｎ" },
-                  { name: "Pinecone", logo: "🌲" },
-                  { name: "Weaviate", logo: "🌀" },
-                  { name: "LangChain", logo: "🦜" }
-                ].map((tag, i) => (
+                {["Databricks", "Notion", "Pinecone", "Weaviate", "LangChain"].map((name, i) => (
                   <span 
                     key={i} 
-                    className="flex items-center gap-1 px-3 py-1 bg-white hover:bg-slate-50 dark:bg-zinc-800 border border-slate-100 dark:border-zinc-750 rounded-full text-[10px] font-bold text-slate-650 dark:text-zinc-350 cursor-pointer shadow-sm transition-colors"
+                    className="flex items-center gap-1.5 px-3 py-1 bg-white hover:bg-slate-50 dark:bg-zinc-800 border border-slate-100 dark:border-zinc-750 rounded-full text-[10px] font-bold text-slate-650 dark:text-zinc-350 cursor-pointer shadow-sm transition-colors"
                   >
-                    <span>{tag.logo}</span> {tag.name}
+                    <span className="w-3.5 h-3.5 flex items-center justify-center">{getBrandLogo(name, "w-3.5 h-3.5")}</span> {name}
                   </span>
                 ))}
               </div>
@@ -274,24 +339,24 @@ export default function Home() {
 
             {/* Orbiting nodes with dynamic layout */}
             {/* Node 1: OpenAI */}
-            <div className="absolute top-2 right-4 bg-white dark:bg-zinc-800 border dark:border-zinc-700 px-2.5 py-1 rounded-full shadow-md text-[10px] font-black text-slate-800 dark:text-white flex items-center gap-1 hover:scale-105 transition-transform cursor-pointer">
-              <span>🌀</span> OpenAI
+            <div className="absolute top-2 right-4 bg-white dark:bg-zinc-800 border dark:border-zinc-700 px-2.5 py-1 rounded-full shadow-md text-[10px] font-black text-slate-800 dark:text-white flex items-center gap-1.5 hover:scale-105 transition-transform cursor-pointer">
+              <span className="w-3.5 h-3.5 text-black dark:text-white flex items-center">{getBrandLogo("OpenAI", "w-3.5 h-3.5")}</span> OpenAI
             </div>
             {/* Node 2: Anthropic */}
-            <div className="absolute top-20 left-0 bg-white dark:bg-zinc-800 border dark:border-zinc-700 px-2.5 py-1 rounded-full shadow-md text-[10px] font-black text-slate-800 dark:text-white flex items-center gap-1 hover:scale-105 transition-transform cursor-pointer">
-              <span>▲</span> Anthropic
+            <div className="absolute top-20 left-0 bg-white dark:bg-zinc-800 border dark:border-zinc-700 px-2.5 py-1 rounded-full shadow-md text-[10px] font-black text-slate-800 dark:text-white flex items-center gap-1.5 hover:scale-105 transition-transform cursor-pointer">
+              <span className="w-3.5 h-3.5 text-black dark:text-white flex items-center">{getBrandLogo("Anthropic", "w-3.5 h-3.5")}</span> Anthropic
             </div>
             {/* Node 3: Cursor */}
-            <div className="absolute top-20 right-0 bg-white dark:bg-zinc-800 border dark:border-zinc-700 px-2.5 py-1 rounded-full shadow-md text-[10px] font-black text-slate-800 dark:text-white flex items-center gap-1 hover:scale-105 transition-transform cursor-pointer">
-              <span>💎</span> Cursor
+            <div className="absolute top-20 right-0 bg-white dark:bg-zinc-800 border dark:border-zinc-700 px-2.5 py-1 rounded-full shadow-md text-[10px] font-black text-slate-800 dark:text-white flex items-center gap-1.5 hover:scale-105 transition-transform cursor-pointer">
+              <span className="w-3.5 h-3.5 text-black dark:text-white flex items-center">{getBrandLogo("Cursor", "w-3.5 h-3.5")}</span> Cursor
             </div>
             {/* Node 4: Midjourney */}
-            <div className="absolute bottom-2 left-8 bg-white dark:bg-zinc-800 border dark:border-zinc-700 px-2.5 py-1 rounded-full shadow-md text-[10px] font-black text-slate-800 dark:text-white flex items-center gap-1 hover:scale-105 transition-transform cursor-pointer">
-              <span>⛵</span> Midjourney
+            <div className="absolute bottom-2 left-8 bg-white dark:bg-zinc-800 border dark:border-zinc-700 px-2.5 py-1 rounded-full shadow-md text-[10px] font-black text-slate-800 dark:text-white flex items-center gap-1.5 hover:scale-105 transition-transform cursor-pointer">
+              <span className="w-3.5 h-3.5 text-black dark:text-white flex items-center">{getBrandLogo("Midjourney", "w-3.5 h-3.5")}</span> Midjourney
             </div>
             {/* Node 5: Perplexity */}
-            <div className="absolute bottom-2 right-8 bg-white dark:bg-zinc-800 border dark:border-zinc-700 px-2.5 py-1 rounded-full shadow-md text-[10px] font-black text-slate-800 dark:text-white flex items-center gap-1 hover:scale-105 transition-transform cursor-pointer">
-              <span>🌐</span> Perplexity
+            <div className="absolute bottom-2 right-8 bg-white dark:bg-zinc-800 border dark:border-zinc-700 px-2.5 py-1 rounded-full shadow-md text-[10px] font-black text-slate-800 dark:text-white flex items-center gap-1.5 hover:scale-105 transition-transform cursor-pointer">
+              <span className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400 flex items-center">{getBrandLogo("Perplexity", "w-3.5 h-3.5")}</span> Perplexity
             </div>
 
             {/* Minor red connecting dot points */}
@@ -390,8 +455,8 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {popularCarousel.slice(carouselIndex, carouselIndex + 4).map((item, i) => (
               <div key={i} className={`p-4 rounded-2xl border dark:border-zinc-800 flex items-center gap-3 hover:shadow-sm cursor-pointer shadow-inner bg-slate-50 dark:bg-zinc-900 group`}>
-                <div className="w-10 h-10 rounded-xl bg-white dark:bg-zinc-850 flex items-center justify-center text-lg shadow-sm border dark:border-zinc-800">
-                  {item.icon}
+                <div className="w-10 h-10 rounded-xl bg-white dark:bg-zinc-850 flex items-center justify-center shadow-sm border dark:border-zinc-800 flex-shrink-0">
+                  {getBrandLogo(item.name, "w-5 h-5")}
                 </div>
                 <div className="min-w-0">
                   <h4 className="text-xs font-black text-slate-850 dark:text-white truncate group-hover:text-brandRed transition-colors">
@@ -434,9 +499,7 @@ export default function Home() {
                     <div className="relative overflow-hidden bg-gradient-to-br from-indigo-900 via-[#1C143B] to-[#0A061C] text-white p-6 rounded-3xl flex flex-col md:flex-row justify-between items-start md:items-center gap-6 shadow-md border border-indigo-950/20">
                       <div className="absolute top-0 right-0 w-36 h-36 bg-purple-500/10 blur-3xl pointer-events-none rounded-full" />
                       <div className="flex items-center gap-4 z-10">
-                        <div className="w-12 h-12 rounded-xl bg-purple-650 flex items-center justify-center text-xl select-none font-bold shadow-md shadow-purple-500/20 flex-shrink-0">
-                          ⬡
-                        </div>
+                        <StudioLogo className="w-12 h-12 flex-shrink-0" />
                         <div className="space-y-1">
                           <span className="text-[7.5px] uppercase tracking-wider font-extrabold text-purple-300 bg-purple-500/20 px-2 py-0.5 rounded">Sponsored</span>
                           <h4 className="text-xs font-black tracking-tight leading-snug">
@@ -451,9 +514,13 @@ export default function Home() {
                       <div className="flex items-center gap-4 z-10 flex-shrink-0 w-full md:w-auto justify-between md:justify-start">
                         {/* Floating circles mockup design */}
                         <div className="flex -space-x-1.5 opacity-80">
-                          {["📁", "🤖", "🌐"].map((emoji, idx) => (
-                            <div key={idx} className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center text-[9px] border border-white/5 shadow-sm">
-                              {emoji}
+                          {[
+                            <Folder size={11} key="folder" className="text-purple-300" />,
+                            <Bot size={11} key="bot" className="text-purple-300" />,
+                            <Globe size={11} key="globe" className="text-purple-300" />
+                          ].map((icon, idx) => (
+                            <div key={idx} className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center border border-white/5 shadow-sm">
+                              {icon}
                             </div>
                           ))}
                         </div>
@@ -467,8 +534,8 @@ export default function Home() {
 
                   <div className="bg-white dark:bg-zinc-900 border border-slate-100 dark:border-zinc-800 rounded-3xl p-5 flex items-center justify-between shadow-sm hover:shadow-md transition-shadow group">
                     <div className="flex items-center gap-4 min-w-0">
-                      <div className={`w-12 h-12 rounded-2xl flex items-center justify-center text-2xl flex-shrink-0 border dark:border-zinc-850 shadow-sm ${p.logoBg}`}>
-                        {p.logo}
+                      <div className="w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0 border bg-white dark:bg-zinc-800 dark:border-zinc-800 shadow-sm">
+                        {getBrandLogo(p.id, "w-6 h-6")}
                       </div>
 
                       <div className="min-w-0 space-y-1">
@@ -548,8 +615,8 @@ export default function Home() {
           </div>
 
           <div className="p-4 bg-slate-50 dark:bg-zinc-950 border dark:border-zinc-850 rounded-2xl flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-indigo-650 text-white flex items-center justify-center text-lg select-none">
-              💎
+            <div className="w-10 h-10 rounded-xl bg-white dark:bg-zinc-900 flex items-center justify-center border dark:border-zinc-800 shadow-sm flex-shrink-0">
+              {getBrandLogo("Cursor", "w-5 h-5")}
             </div>
             <div className="min-w-0">
               <h5 className="text-xs font-black text-slate-850 dark:text-white truncate">
