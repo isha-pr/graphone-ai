@@ -89,31 +89,36 @@ src/
 
 ---
 
-## ⚙️ Local Setup Instructions
+## ⚙️ Local Setup Instructions (Frontend)
 
-Follow these steps to run the application locally on your machine:
+To run the Next.js frontend application locally on your machine, follow these steps:
 
-### 1. Install Dependencies
-Clone the repository, navigate to the folder, and run:
+### 1. Navigate to the Frontend Directory
+```bash
+cd frontend
+```
+
+### 2. Install Dependencies
+Install all the required React and Next.js packages:
 ```bash
 npm install
 ```
 
-### 2. Run Development Server
+### 3. Run Development Server
 Start the local development server:
 ```bash
 npm run dev
 ```
 Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
 
-### 3. Build for Production
-Verify that the project compiles and builds successfully for deployment:
+### 4. Build for Production
+Verify that the project compiles and builds successfully:
 ```bash
 npm run build
 ```
 
-### 4. Start Production Server
-Launch the optimized build:
+### 5. Start Production Server
+Launch the optimized production bundle:
 ```bash
 npm run start
 ```
