@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Search, Sun, Moon, Menu, Bell, ChevronDown, ArrowRight } from "lucide-react";
+import { Search, Sun, Moon, Menu, ChevronDown, ArrowRight } from "lucide-react";
 import { useTheme } from "@/context/ThemeContext";
 import { GraphOneLogo } from "./Logos";
 
@@ -135,22 +135,10 @@ export default function Header({ onMenuClick, onSearchClick }: HeaderProps) {
 
         {isHome ? (
           <>
-            {/* Bell Notifications */}
-            <button className="relative p-2 text-slate-500 dark:text-zinc-400 hover:bg-slate-50 dark:hover:bg-zinc-900 rounded-full transition-all">
-              <Bell size={18} />
-              <span className="absolute top-1.5 right-1.5 w-4 h-4 bg-brandRed text-white text-[9px] font-black rounded-full flex items-center justify-center shadow-sm shadow-brandRed/20">
-                10
-              </span>
-            </button>
-
-            {/* Profile Avatar dropdown */}
+            {/* Profile Placeholder dropdown */}
             <div className="flex items-center gap-1 cursor-pointer group pl-1">
-              <div className="w-8 h-8 rounded-full overflow-hidden border border-slate-200 dark:border-zinc-800 bg-slate-100 shadow-sm">
-                <img 
-                  src="/images/portrait_pat_grady.png" 
-                  alt="User Profile" 
-                  className="w-full h-full object-cover"
-                />
+              <div className="w-8 h-8 rounded-full flex items-center justify-center border border-slate-200 dark:border-zinc-800 bg-slate-100 dark:bg-zinc-900 text-slate-800 dark:text-zinc-100 font-black shadow-sm">
+                P
               </div>
               <ChevronDown size={14} className="text-slate-400 group-hover:text-slate-700 dark:group-hover:text-zinc-200 transition-colors" />
             </div>
