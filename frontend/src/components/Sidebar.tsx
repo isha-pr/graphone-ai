@@ -66,25 +66,18 @@ export default function Sidebar({ isOpen = false, onClose, persistent = false }:
               const isActive = item.href === "/" 
                 ? pathname === "/" 
                 : pathname.startsWith(item.href);
-              
-              const Icon = item.icon;
 
               return (
                 <li key={item.name}>
                   <Link
                     href={item.href}
                     onClick={onClose}
-                    className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-black transition-all duration-200 ${
+                    className={`flex items-center px-4 py-2.5 rounded-xl text-sm font-black transition-all duration-200 ${
                       isActive
                         ? "bg-brandRed-light dark:bg-brandRed/10 text-brandRed"
                         : "text-slate-700 hover:bg-slate-50 dark:text-zinc-300 dark:hover:bg-zinc-800/50 hover:text-slate-900 dark:hover:text-zinc-100"
                     }`}
                   >
-                    <Icon 
-                      size={18} 
-                      className={isActive ? "text-brandRed" : item.color} 
-                      fill={isActive && item.name === "Home" ? "currentColor" : "none"}
-                    />
                     <span>{item.name}</span>
                   </Link>
                 </li>
@@ -101,19 +94,17 @@ export default function Sidebar({ isOpen = false, onClose, persistent = false }:
           <ul className="space-y-1">
             {contributeItems.map((item) => {
               const isActive = pathname.startsWith(item.href);
-              const Icon = item.icon;
               return (
                 <li key={item.name}>
                   <Link
                     href={item.href}
                     onClick={onClose}
-                    className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-black transition-all duration-200 ${
+                    className={`flex items-center px-4 py-2.5 rounded-xl text-sm font-black transition-all duration-200 ${
                       isActive
                         ? "bg-brandRed-light dark:bg-brandRed/10 text-brandRed"
                         : "text-slate-700 hover:bg-slate-50 dark:text-zinc-300 dark:hover:bg-zinc-800/50 hover:text-slate-900 dark:hover:text-zinc-100"
                     }`}
                   >
-                    <Icon size={18} className={isActive ? "text-brandRed" : item.color} />
                     <span>{item.name}</span>
                   </Link>
                 </li>
@@ -123,7 +114,7 @@ export default function Sidebar({ isOpen = false, onClose, persistent = false }:
         </div>
       </div>
     </div>
-  );;
+  );
 
   if (persistent) {
     return sidebarContent;
