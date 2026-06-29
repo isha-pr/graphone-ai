@@ -158,10 +158,6 @@ export default function Header({ onMenuClick, onSearchClick }: HeaderProps) {
         ) : (
           <>
             {/* Auth Buttons */}
-            <button className="hidden sm:inline-block text-[12.5px] font-bold text-slate-500 dark:text-zinc-400 hover:text-slate-800 px-3 py-1.5 transition-colors">
-              Log in
-            </button>
-            
             <button className="text-[12.5px] font-black bg-brandRed hover:bg-brandRed-hover text-white px-4 py-2 rounded-full transition-all shadow-sm shadow-brandRed/20">
               Sign up
             </button>
